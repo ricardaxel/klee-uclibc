@@ -157,6 +157,8 @@ $(locale_OUT)/locale_collate.h: $(locale_OUT)/gen_collate $(locale_OUT)/locale_t
 $(locale_OUT)/$(LOCALE_DATA_FILENAME):
 ifeq ($(UCLIBC_DOWNLOAD_PREGENERATED_LOCALE_DATA),y)
 	( cd $(dir $@); $(GET) https://www.uclibc.org/downloads/$(notdir $@) )
+else
+	cp --no-clobber $(locale_DIR)/artefact/$(LOCALE_DATA_FILENAME) $(locale_OUT)
 endif
 
 ifeq ($(UCLIBC_PREGENERATED_LOCALE_DATA),y)

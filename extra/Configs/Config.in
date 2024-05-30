@@ -807,11 +807,12 @@ config UCLIBC_DOWNLOAD_PREGENERATED_LOCALE_DATA
 	default n
 	help
 	  If you would like the build process to use 'wget'/'curl' to automatically
-	  download the pregenerated locale data, enable this option.  Otherwise
-	  you will need to obtain the locale data yourself from:
-		http://www.uclibc.org/downloads/uClibc-locale-030818.tgz
-	  and place the uClibc-locale-030818.tgz tarball in the extra/locale/
-	  directory.
+	  download the pregenerated locale data from http://www.uclibc.org/downloads/, 
+	  enable this option. Otherwise a local tarball will be copied 
+	  (from extra/locale/artefact/). 
+	  If you wan't to use a custom version of locale data, you can place
+	  your own tarball in extra/locale/. It will take precedence
+	  over the one in artefact/ directory.
 
 	  Go ahead and make life easy for yourself... Answer Y.
 
